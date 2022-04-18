@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+<style>
+table,
+tr,
+td {
+border: 2px solid black;
+border-collapse: collapse;
+}
+</style>
+<script>
+function tableData() {
+document.getElementById("demo").innerHTML = shtml;
+}
+const states = new Map([
+['Telangana', {
+capital: 'Hyderabad',
+income: 50000000,
+rating:1,
+population:'4crores'
+}],
+['karnataka', {
+capital: 'bangalore',
+income: 43500000,
+rating:2,
+population:'3crores'
+
+}],
+['Delhi', {
+capital: 'Agra',
+income: 78000000,
+rating:3,
+population:'8crores'
+
+
+}],
+['Kerala', {
+capital: 'Trivendrum',
+income: 21200000,
+rating:4,
+population:'3crores'
+
+}],
+['Maharastra', {
+capital: 'mumbai',
+income: 56400000,
+rating:5,
+population:'18crores'
+
+
+}]
+]);
+let shtml = "<table>";
+states.forEach((value, key) => {
+shtml += `<tr><td rowspan= "4"> ${key} </td><td> ${value.capital} </td></tr><tr><td> ${value.income}</td></tr><tr><td>${value.rating}</td></tr><tr><td>${value.population} </td></tr>`
+});
+
+
+shtml += `</table>`;
+</script>
+</head>
+<body onload="tableData()">
+<p id="demo">CHECK CONSOLE FOR RESULT</p>
+</body>
+</html>
